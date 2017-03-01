@@ -1,10 +1,14 @@
-var path = require('path');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const autoprefixer = require('autoprefixer');
 
 module.exports = {
-  entry: "./src/main.js",
+  context: path.resolve(__dirname, 'src'),
+  entry: './main.js',
   output: {
     path: path.join(__dirname, 'public'),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    chunkFilename: "chunk.[id].[hash:6].js"
   },
 
   module: {
@@ -13,18 +17,33 @@ module.exports = {
         test: /\.js$/,
         use: "babel-loader",
         exclude: [/node_modules/]
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'postcss-loader']
+        })
       }
     ]
   },
+
+  plugins: [
+    new ExtractTextPlugin({
+      filename: 'bundle.css'
+    })
+  ],
+
   resolve: {
+    extensions: ['.js', '.jsx'],
     modules: [
       "src", "node_modules"
     ]
   },
-
   devServer: {
-    contentBase: "public",
+    contentBase: "./public",
     compress: true,
-    port: 9000
+    port: 9000,
+    inline: true,
+    historyApiFallback: true
   }
 };
