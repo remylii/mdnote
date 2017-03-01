@@ -29,12 +29,13 @@ module.exports = {
 
   plugins: [
     new ExtractTextPlugin({
-      filename: 'bundle.css'
+      filename: 'bundle.css',
+      disable: false,
+      allChunks: true
     })
   ],
 
   resolve: {
-    extensions: ['.js', '.jsx'],
     modules: [
       "src", "node_modules"
     ]
