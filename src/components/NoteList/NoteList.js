@@ -1,6 +1,8 @@
-import { Component } from 'react';
+import React from 'react';
 
-export default class NoteList extends Component {
+import './NoteList.css';
+
+export default class NoteList extends React.Component {
   handleClickItem(id) {
     this.props.onSelect(id);
   }
@@ -16,7 +18,7 @@ export default class NoteList extends Component {
       <li
         className={classNames.join(' ')}
         key={note.id}
-        onClick={() => this.props.onSelect(note.id)} >
+        onClick={() => this.handleClickItem(note.id)} >
         {note.title}
       </li>
     );
