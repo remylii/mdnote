@@ -1,10 +1,12 @@
 import React from "react";
 import { render } from "react-dom";
-import { Router, BrowserHistory, Route } from 'react-router';
+import { Router, Route, BrowserHistory } from 'react-router';
 
-
-import './main.css';
-import NoteList from './components/NoteList/NoteList';
+import App from './pages/App/App';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Note from './pages/Note/Note';
+import NoteEdit from './pages/Dashboard/NoteEdit/NoteEdit';
+import Starred from './pages/Starred/Starred';
 
 render(
   <Router history={BrowserHistory}>

@@ -1,5 +1,5 @@
 import { dispatch } from '../dispatcher';
-import NoteAPIClient form '../services/NoteAPIClient';
+import NoteAPIClient from '../services/NoteAPIClient';
 
 export default {
   create({ title, body }) {

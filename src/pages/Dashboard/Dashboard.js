@@ -2,6 +2,9 @@ import React from 'react';
 import { Container } from 'flux/utils';
 import dashboardStore from '../../stores/dashboardStore';
 import NoteAction from '../../actions/NoteAction';
+import Button from '../../components/Button/Button';
+import NoteList from '../../components/NoteList/NoteList';
+
 
 class Dashboard extends React.Component {
   static getStores() {
