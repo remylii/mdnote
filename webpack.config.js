@@ -7,8 +7,7 @@ module.exports = {
   entry: './main.js',
   output: {
     path: path.join(__dirname, 'public'),
-    filename: "bundle.js",
-    chunkFilename: "chunk.[id].[hash:6].js"
+    filename: "bundle.js"
   },
 
   module: {
@@ -16,7 +15,7 @@ module.exports = {
       {
         test: /\.js$/,
         use: "babel-loader",
-        exclude: [/node_modules/]
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -29,9 +28,7 @@ module.exports = {
 
   plugins: [
     new ExtractTextPlugin({
-      filename: 'bundle.css',
-      disable: false,
-      allChunks: true
+      filename: 'bundle.css'
     })
   ],
 
@@ -46,5 +43,6 @@ module.exports = {
     port: 9000,
     inline: true,
     historyApiFallback: true
-  }
+  },
+  devtool: 'source-map'
 };

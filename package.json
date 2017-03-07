@@ -1,7 +1,6 @@
 {
   "name": "mdnote",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": {},
   "author": "remyli",
   "license": "MIT",
@@ -18,6 +17,7 @@
     "css-loader": "^0.26.2",
     "extract-text-webpack-plugin": "beta",
     "flux": "^3.1.2",
+    "marked": "^0.3.6",
     "postcss": "^5.2.15",
     "postcss-cli": "^3.0.0-beta",
     "postcss-easy-import": "^2.0.0",

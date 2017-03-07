@@ -1,1 +1,3 @@
 @import 'styles/base.css';
+@import './pages/**/*.css';
+@import './components/**/*.css';
