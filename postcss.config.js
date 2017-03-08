@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    require('autoprefixer'),
-    require('postcss-easy-import')
+    require('postcss-easy-import')({ glob: true }),
+    require('autoprefixer')
   ]
 };

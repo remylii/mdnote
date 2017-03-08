@@ -8,6 +8,8 @@ import Note from './pages/Note/Note';
 import NoteEdit from './pages/Dashboard/NoteEdit/NoteEdit';
 import Starred from './pages/Starred/Starred';
 
+import './main.css';
+
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route component={App}>

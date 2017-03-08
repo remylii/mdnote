@@ -23,7 +23,7 @@ export default {
 
   create() {
     return NoteAPIClient.createNote().then(note => {
-      dispatch({ type: 'note/update', note });
+      dispatch({ type: 'note/create', note });
     });
   },
 

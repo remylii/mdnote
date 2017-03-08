@@ -27,7 +27,7 @@ export default class NoteEdit extends React.Component {
   }
 
   handleShow() {
-    browserHistory.push('/notes/${this.state.note.id}');
+    browserHistory.push(`/notes/${this.state.note.id}`);
   }
 
   onChangeTitle(e) {
@@ -44,25 +44,23 @@ export default class NoteEdit extends React.Component {
 
     const isChanged = this.props.note.title !== note.title || this.props.note.body !== note.body;
 
-    return (
-      <div className="page-NoteEdit">
-        <div className="page-NoteEdit-header">
-          <input type="text" aria-label="タイトル" ref="title" value={note.title} onChange={this.onChangeTitle(this)} data-page-title />
-          <div className="page-NoteEdit-buttons">
-            <Button onClick={this.handleSave.bind(this)}>{isChanged ? '* ' : ''}Save</Button>
-            <Button onClick={this.handleDelete.bind(this)}>Delete</Button>
-            <Button onClick={this.handleShow.bind(this)}>Show</Button>
-          </div>
-        </div>
-
-        <div className="page-NoteEdit-body">
-          <label htmlFor="note-body" className="u-for-at">本文</label>
-          <textarea id="note-body" value={note.body} onChange={this.onChangeBody.bind(this)} />
-        </div>
-        <div className="page-NoteEdit-preview">
-          <NoteBody body={note.body} />
+    return <div className="page-NoteEdit">
+      <div className="page-NoteEdit-header">
+        <input aria-label="タイトル" type="text" ref="title" value={note.title} onChange={this.onChangeTitle.bind(this)} data-page-title />
+        <div className="page-NoteEdit-buttons">
+          <Button onClick={this.handleSave.bind(this)}>{isChanged ? '* ' : ''}Save</Button>
+          <Button onClick={this.handleDelete.bind(this)}>Delete</Button>
+          <Button onClick={this.handleShow.bind(this)}>Show</Button>
         </div>
       </div>
-    );
+
+      <div className="page-NoteEdit-body">
+        <label htmlFor="note-body" className="u-for-at">本文</label>
+        <textarea id="note-body" value={note.body} onChange={this.onChangeBody.bind(this)} />
+      </div>
+      <div className="page-NoteEdit-preview">
+        <NoteBody body={note.body} />
+      </div>
+    </div>;
   }
 }

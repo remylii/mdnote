@@ -1,27 +1,22 @@
 import React from 'react';
-
-import './NoteList.css';
+import { Link } from 'react-router';
 
 export default class NoteList extends React.Component {
-  handleClickItem(id) {
-    this.props.onSelect(id);
-  }
-
+  // 子要素のレンダリング
   renderItem(note) {
     const classNames = ['NoteList-item'];
 
-    if (this.props.selectedNoteId === note.id) {
+    // 洗濯中の要素に`is-selected`classを付与
+    if (Number(this.props.selectedNoteId) === note.id) {
       classNames.push('is-selected');
     }
 
-    return (
-      <li
-        className={classNames.join(' ')}
-        key={note.id}
-        onClick={() => this.handleClickItem(note.id)} >
-        {note.title}
-      </li>
-    );
+    return <li className={classNames.join(' ')} key={note.id}>
+      <Link to={`/notes/${note.id}/edit`}>
+        <span className="NoteList-title">{note.title}</span>
+        <span className="NoteList-updated">{note.updated}</span>
+      </Link>
+    </li>;
   }
 
   render() {
@@ -29,10 +24,8 @@ export default class NoteList extends React.Component {
       return this.renderItem(note);
     });
 
-    return (
-      <div className="NoteList">
-        <ul>{items}</ul>
-      </div>
-    );
+    return <div className="NoteList">
+      <ul>{items}</ul>
+    </div>;
   }
 }

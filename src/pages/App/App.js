@@ -1,12 +1,13 @@
 import React from 'react';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
+import { announcePageTitle } from '../../announcer';
 
 export default class App extends React.Component {
   componentDidUpdate(prevPros) {
     const prevPath = prevPros.location.pathname;
     const curtPath = this.props.location.pathname;
     if (prevPath !== curtPath) {
-      // announcePageTitle();
+      announcePageTitle();
     }
   }
 
