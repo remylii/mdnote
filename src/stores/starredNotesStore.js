@@ -1,7 +1,7 @@
 import { ReduceStore } from 'flux/utils';
 import dispatcher from '../dispatcher';
 
-class StarredNoteStore extends ReduceStore {
+class StarredNotesStore extends ReduceStore {
   getInitialState() {
     return { notes: [] };
   }
@@ -17,4 +17,4 @@ class StarredNoteStore extends ReduceStore {
   }
 }
 
-export default new StarredNoteStore(dispatcher);
+export default new StarredNotesStore(dispatcher);

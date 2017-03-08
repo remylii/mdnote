@@ -34,7 +34,6 @@ class Note extends React.Component {
     const note = this.state.note;
     if (!note || !note.id) return null;
 
-
     return <div className="page-Note">
       <NoteHeader note={note} onChangeStar={this.handleChangeStar.bind(this)} />
       <NoteBody body={note.body} />
