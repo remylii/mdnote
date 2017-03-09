@@ -27,7 +27,7 @@ export default {
     });
   },
 
-  update(id, { title: body }) {
+  update(id, { title, body }) {
     return NoteAPIClient.updateNote(id, { title, body }).then(() => {
       dispatch({ type: 'note/update', id, note: { title, body } });
     });

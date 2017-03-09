@@ -21,7 +21,7 @@ class DashboardStore extends ReduceStore {
       case 'note/update':
         return Object.assign({}, state, {
           notes: state.notes.map(note => {
-            return action.id === note.id ? Object.assign({}, note, action.type) : note;
+            return action.id === note.id ? Object.assign({}, note, action.note) : note;
           }),
         });
 

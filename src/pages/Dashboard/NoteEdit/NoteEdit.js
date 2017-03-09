@@ -16,8 +16,8 @@ export default class NoteEdit extends React.Component {
   }
 
   handleSave() {
-    const { id, title, body } = this.state.node;
-    NoteAction.update(id, { title: body });
+    const { id, title, body } = this.state.note;
+    NoteAction.update(id, { title, body });
   }
 
   handleDelete() {
@@ -35,7 +35,7 @@ export default class NoteEdit extends React.Component {
   }
 
   onChangeBody(e) {
-    this.setState({ note: Object.assing({}, this.state.note, { body: e.target.value}) });
+    this.setState({ note: Object.assign({}, this.state.note, { body: e.target.value}) });
   }
 
   render() {
