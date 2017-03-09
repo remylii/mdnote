@@ -1,7 +1,24 @@
 import React from 'react';
+import Button from '../Button/Button';
 
 export default class StarButton extends React.Component {
+  renderStar() {
+    return <Button onClick={() => this.props.onChange(true)}>
+      <span>Star</span>
+      <span className="StarButton-star">☆</span>
+    </Button>;
+  }
+
+  renderUnstar() {
+    return <Button onClick={() => this.props.onChange(false)}>
+      <span>Unstar</span>
+      <span className="StarButton-unstar">★</span>
+    </Button>;
+  }
+
   render() {
-    return <div>StarButton</div>;
+    return <span className="StarButton">
+      {this.props.starred ? this.renderUnstar() : this.renderStar()}
+    </span>;
   }
 }

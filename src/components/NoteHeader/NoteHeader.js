@@ -30,7 +30,7 @@ export default class NoteHeader extends React.Component {
         <span className="NoteHeader-updated">{note.updated}</span>
       </div>
       <div className="NoteHeader-buttons">
-        <Button hidden={!this.isOwn()} onClick={() => this.handleChangeEdit()}>Edit</Button>
+        <Button hidden={!this.isOwn()} onClick={() => this.handleClickEdit()}>Edit</Button>
         <StarButton starred={note.starred} onChange={this.props.onChangeStar} />
       </div>
     </div>;
