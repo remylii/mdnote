@@ -1,3 +1,55 @@
 .GlobalHeader {
+  background-color: #efefef;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  padding: 0 15px;
+}
 
+.GlobalHeader-title {
+  margin: 0;
+  padding: 0;
+}
+
+.GlobalHeader-title > a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.GlobalHeader-menu {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+}
+
+.GlobalHeader-user {
+  display: inline-block;
+  font-size: 13px;
+  margin-right: 10px;
+  position: relative;
+  top: -2px;
+}
+
+.GlobalHeader-user > img {
+  margin-right: 5px;
+}
+
+.GlobalHeader-user > img,
+.Globalheader-user > span {
+  vertical-align: middle;
+}
+
+.GlobalHeader-menuItem {
+  display: inline-block;
+  margin: 0 8px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.GlobalHeader-munuItem:hover {
+  color: #00c;
 }

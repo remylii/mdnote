@@ -2,10 +2,48 @@
 
 }
 
-.NoteList-item {
-
+.NoteList ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #ccc;
 }
 
-.is-select {
-  background-color: #f22;
+.NoteList li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.NoteList li > a {
+  padding: 10px;
+  display: block;
+  color: #333;
+  font-size: 15px;
+  text-decoration: none;
+  border-left: 5px solid transparent;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.NoteList li > a:hover {
+  border-left-color: #2673e8;
+  background-color: #f5f5f5;
+}
+
+.NoteList li.is-selected > a {
+  color: #fff;
+  background-color: #2673e8;
+}
+
+.NoteList-updated {
+  display: block;
+  font-size: 11px;
+  margin-top: 10px;
+  color: #999;
+}
+
+.NoteList li.is-selected > a .NoteList-updated {
+  color: #fff;
 }

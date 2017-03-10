@@ -1,3 +1,45 @@
-.StarredNoteList {
+.StarredLinkList ul {
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #ccc;
+}
 
+.StarredLinkList li {
+  border-bottom: 1px solid #ccc;
+}
+
+.StarredLinkList li > a {
+  display: block;
+  color: #333;
+  padding: 20px 15px;
+  text-decoration: none;
+  border-left: 8px solid transparent;
+}
+
+.StarredLinkList li > a:hover {
+  border-left-color: #2673e8;
+  background: #f5f5f5;
+}
+
+.StarredNoteList-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.StarredLinkList-meta {
+  font-size: 13px;
+  margin-top: 10px;
+}
+.StarredLinkList-author {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.StarredLinkList-author > img {
+  vertical-align: middle;
+}
+
+.StarredLinkList-updated {
+  color: #666;
 }

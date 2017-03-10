@@ -1,6 +1,6 @@
 .Button {
   background-color: #ddd;
-  background-image: inear-gradient(#fcfcfc, #eee);
+  background-image: linear-gradient(#fcfcfc, #eee);
   border-color: #ccc;
   padding: 3px 10px;
   font-size: 12px;

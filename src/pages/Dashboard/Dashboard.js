@@ -33,9 +33,9 @@ class Dashboard extends React.Component {
         <div role="navigation">
           <NoteList notes={this.state.notes} selectedNoteId={this.props.params.id} />
         </div>
-        <div className="page-Dashboard-main" role="form">
-          {this.props.children ? React.cloneElement(this.props.children, { note: note }) : null}
-        </div>
+      </div>
+      <div className="page-Dashboard-main" role="form">
+        {this.props.children ? React.cloneElement(this.props.children, { note: note }) : null}
       </div>
     </div>;
   }
