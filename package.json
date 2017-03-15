@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build:dev": "NODE_ENV=develop webpack",
-    "dev": "NODE_ENV=develop webpack-dev-server"
+    "dev": "NODE_ENV=develop webpack-dev-server",
+    "lint": "eslint src"
   },
   "dependencies": {
     "autoprefixer": "^6.7.6",
