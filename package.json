@@ -7,7 +7,8 @@
   "scripts": {
     "build:dev": "NODE_ENV=develop webpack",
     "dev": "NODE_ENV=develop webpack-dev-server",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "check": "flow check"
   },
   "dependencies": {
     "autoprefixer": "^6.7.6",
