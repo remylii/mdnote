@@ -13,8 +13,10 @@ coverage
 
 # Dependency directory
 node_modules
-public/bundle.js
-public/bundle.css
+public/bundle.js*
+public/bundle.css*
+public/bundle.js.*
+public/bundle.css.*
 .nyc_output
 
 # Distribution
