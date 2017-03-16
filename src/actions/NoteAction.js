@@ -1,5 +1,8 @@
+/* @flow */
 import { dispatch } from '../dispatcher';
 import NoteAPIClient from '../services/NoteAPIClient';
+
+type StrictNote = {| title: string, body: string |};
 
 export default {
   fetchMyNotes() {
@@ -14,7 +17,7 @@ export default {
     });
   },
 
-  fetch(id) {
+  fetch(id: number) {
     dispatch({ type: 'note/fetch/before'});
     return NoteAPIClient.fetchNote(id).then(note => {
       dispatch({ type: 'note/fetch', note });
@@ -27,13 +30,13 @@ export default {
     });
   },
 
-  update(id, { title, body }) {
+  update(id: number, { title, body }: StrictNote) {
     return NoteAPIClient.updateNote(id, { title, body }).then(() => {
       dispatch({ type: 'note/update', id, note: { title, body } });
     });
   },
 
-  delete(id) {
+  delete(id: number) {
     return NoteAPIClient.deleteNote(id).then(() => {
       dispatch({ type: 'note/delete', id });
     });

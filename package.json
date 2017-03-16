@@ -7,12 +7,12 @@
   "scripts": {
     "build:dev": "NODE_ENV=develop webpack",
     "dev": "NODE_ENV=develop webpack-dev-server",
-    "lint": "eslint src",
-    "check": "flow check"
+    "lint": "eslint src"
   },
   "dependencies": {
     "autoprefixer": "^6.7.6",
     "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.3.2",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-es2015": "^6.22.0",
