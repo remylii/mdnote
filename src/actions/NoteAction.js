@@ -1,43 +1,43 @@
 /* @flow */
 import { dispatch } from '../dispatcher';
-import NoteAPIClient from '../services/NoteAPIClient';
+import NoteApiClient from '../services/NoteApiClient';
 
 type StrictNote = {| title: string, body: string |};
 
-export default {
-  fetchMyNotes() {
-    return NoteAPIClient.fetchMyNotes().then(notes => {
+export default class NoteAction {
+  static fetchMyNotes() {
+    return NoteApiClient.fetchMyNotes().then(notes => {
       dispatch({ type: 'note/fetch/my', notes });
     });
-  },
+  }
 
-  fetchStarred() {
-    return NoteAPIClient.fetchStarredNotes().then(notes => {
+  static fetchStarred() {
+    return NoteApiClient.fetchStarredNotes().then(notes => {
       dispatch({ type: 'note/fetch/starred', notes });
     });
-  },
+  }
 
-  fetch(id: number) {
+  static fetch(id: number) {
     dispatch({ type: 'note/fetch/before'});
-    return NoteAPIClient.fetchNote(id).then(note => {
+    return NoteApiClient.fetchNote(id).then(note => {
       dispatch({ type: 'note/fetch', note });
     });
-  },
+  }
 
-  create() {
-    return NoteAPIClient.createNote().then(note => {
+  static create() {
+    return NoteApiClient.createNote().then(note => {
       dispatch({ type: 'note/create', note });
     });
-  },
+  }
 
-  update(id: number, { title, body }: StrictNote) {
-    return NoteAPIClient.updateNote(id, { title, body }).then(() => {
+  static update(id: number, { title, body }: StrictNote) {
+    return NoteApiClient.updateNote(id, { title, body }).then(() => {
       dispatch({ type: 'note/update', id, note: { title, body } });
     });
-  },
+  }
 
-  delete(id: number) {
-    return NoteAPIClient.deleteNote(id).then(() => {
+  static delete(id: number) {
+    return NoteApiClient.deleteNote(id).then(() => {
       dispatch({ type: 'note/delete', id });
     });
   }

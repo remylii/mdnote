@@ -1,15 +1,15 @@
 import { dispatch } from '../dispatcher';
-import NoteAPIClient from '../services/NoteAPIClient';
+import NoteApiClient from '../services/NoteApiClient';
 
-export default {
-  create(noteId) {
-    return NoteAPIClient.createStar(noteId).then(() => {
+export default class StarAction {
+  static create(noteId) {
+    return NoteApiClient.createStar(noteId).then(() => {
       dispatch({ type: 'star/create', noteId });
     });
-  },
+  }
 
-  delete(noteId) {
-    return NoteAPIClient.deleteStar(noteId).then(() => {
+  static delete(noteId) {
+    return NoteApiClient.deleteStar(noteId).then(() => {
       dispatch({ type: 'star/delete', noteId });
     });
   }
