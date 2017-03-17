@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
 import App from './pages/App/App';
@@ -13,11 +13,11 @@ import './main.css';
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route component={App}>
-      <Route path="/" component={Dashboard}>
-        <Route path="notes/:id/edit" component={NoteEdit} />
+      <Route path='/' component={Dashboard}>
+        <Route path='notes/:id/edit' component={NoteEdit} />
       </Route>
-      <Route path="notes/:id" component={Note} />
-      <Route path="starred" component={Starred} />
+      <Route path='notes/:id' component={Note} />
+      <Route path='starred' component={Starred} />
     </Route>
   </Router>
-), document.getElementById("app"));
+), document.getElementById('app'));
